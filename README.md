@@ -1,7 +1,11 @@
+FINAL UPDATE CHECK
 # 🚀 AI-Based Autonomous Navigation System
 
 ## 📌 Project Overview
-This project demonstrates an AI-based autonomous navigation system where a virtual robot navigates from a start point to a destination while avoiding obstacles using intelligent path planning.
+
+This project simulates an AI-based autonomous navigation system where a robot intelligently moves from a start point to a destination while avoiding obstacles using the A* path planning algorithm.
+
+The system demonstrates core concepts of robotics and autonomous systems such as path planning, obstacle avoidance, and simulation-based navigation.
 
 ---
 
@@ -20,16 +24,15 @@ Used in:
 
 ---
 
-## 🧠 Features
-- Interactive grid simulation  
-- Start & End selection  
-- Obstacle placement  
-- Auto obstacle generation (G)  
-- A* path planning  
-- Real-time navigation  
-- Screenshot saving (P)  
-- Demo video  
+## ✨ Features
 
+- Interactive grid-based simulation
+- A* path planning algorithm implementation
+- Dynamic obstacle placement
+- Real-time robot movement visualization
+- Start and end point selection
+- Keyboard-based control system
+- Clean modular Python code structure
 ---
 
 ## 🛠️ Tech Stack
@@ -56,9 +59,19 @@ requirements.txt
 
 ---
 
-## ▶️ Run
-python main.py
----
+## ▶️ How to Run
+
+1. Clone the repository:
+git clone https://github.com/Swetha07062003/AI-Autonomous-Navigation-System-
+
+2. Navigate to the project:
+cd AI-Autonomous-Navigation-System
+
+3. Install dependencies:
+pip install pygame
+
+4. Run the project:
+python src/main.py
 
 ## 🎮 Controls
 
@@ -75,23 +88,37 @@ python main.py
 
 ## 🎥 Demo Video
 
-[Watch Demo](demo/demo.mp4)
+▶️ Click below to watch the project demo:
 
+[Watch Demo Video](demo/demo.mp4)
 ---
 
 ## 📸 Screenshots
 
-![Grid](images/grid.png)  
-![Obstacles](images/obstacles.png)  
-![Path](images/path1.png)  
+### 🧱 Grid Setup
+![Grid](images/grid.png)
+
+### 🚧 Obstacles Placement
+![Obstacles](images/obstacles.png)
+
+### 🧠 Path Planning (A*)
+![Path](images/path1.png)
+
+### 🤖 Robot Navigation Output
+![Output](images/output.png)
 
 ---
 
-## 🔮 Future Improvements
-- OpenCV integration  
-- Object detection  
-- ROS  
-- 3D simulation  
+## 🚀 Future Improvements
+
+- 🔹 Real-time camera integration using OpenCV for live obstacle detection
+- 🔹 Implementation of YOLO-based object detection for dynamic environments
+- 🔹 Integration with ROS (Robot Operating System) for real robotic applications
+- 🔹 Upgrade from 2D grid simulation to 3D simulation using CARLA or Gazebo
+- 🔹 Implementation of Reinforcement Learning for adaptive navigation
+- 🔹 Multi-agent navigation system (multiple robots coordination)
+- 🔹 Path optimization using Dijkstra and Hybrid A* algorithms
+- 🔹 Deployment on Raspberry Pi / Jetson Nano with real hardware
 
 ---
 
