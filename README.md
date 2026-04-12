@@ -106,6 +106,9 @@ python main.py
 ![Path2](images/path2.png)
 ![Path3](images/path3.png)
 
+## 🎥 Demo Video
+
+[Click here to watch the demo](demo/demo.mp4)
 ---
 
 ## 📊 Results
