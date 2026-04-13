@@ -19,7 +19,7 @@ mode = None
 moving = False
 
 clock = pygame.time.Clock()
-
+speed = 5   # 🔥 NEW (controls movement speed)
 
 def get_clicked_pos(pos):
     gap = WIDTH // ROWS
@@ -39,11 +39,16 @@ def generate_random_obstacles(grid, count=40):
 
 
 running = True
-while running:
-    clock.tick(5)
+frame_count = 0  # 🔥 for speed control
 
-    # ✅ REAL-TIME REPLANNING
-    if moving:
+while running:
+    clock.tick(60)  # smoother loop
+
+    # 🔥 SPEED CONTROL LOGIC
+    frame_count += 1
+
+    # ✅ REAL-TIME REPLANNING + CONTROLLED SPEED
+    if moving and frame_count % speed == 0:
         if robot_pos == end:
             moving = False
         else:
@@ -51,8 +56,14 @@ while running:
 
             if new_path:
                 path = new_path
+
                 if len(path) > 1:
-                    robot_pos = path[1]
+                    target = path[1]
+
+                    # 🔥 LOGGING
+                    print("Agent moving to:", target)
+
+                    robot_pos = target
                 else:
                     robot_pos = end
             else:
@@ -93,6 +104,15 @@ while running:
             elif event.key == pygame.K_p:
                 pygame.image.save(win, "output.png")
                 print("Screenshot saved!")
+
+            # 🔥 SPEED CONTROL KEYS
+            elif event.key == pygame.K_UP:
+                speed = max(1, speed - 1)
+                print("Speed Increased:", speed)
+
+            elif event.key == pygame.K_DOWN:
+                speed += 1
+                print("Speed Decreased:", speed)
 
     left, _, right = pygame.mouse.get_pressed()
 

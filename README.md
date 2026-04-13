@@ -105,6 +105,10 @@ python src/main.py
 ![Path](images/path1.png)
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 4571341f5bd424a606d947cb8058791dd7f150e3
 ---
 
 ## 🚀 Future Improvements
@@ -121,4 +125,8 @@ python src/main.py
 ---
 
 ## 👩‍💻 Author
+<<<<<<< HEAD
 Swetha K
+=======
+Swetha K
+>>>>>>> 4571341f5bd424a606d947cb8058791dd7f150e3
