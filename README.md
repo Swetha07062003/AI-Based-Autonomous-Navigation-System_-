@@ -1,5 +1,9 @@
 # 🚗 AI-Based Autonomous Navigation System
 
+🚀 A simulation of autonomous robot navigation using A* path planning with dynamic obstacle handling.
+
+---
+
 ## 📌 Project Overview
 
 This project simulates an AI-based autonomous navigation system in a 2D grid environment, where a robot intelligently navigates from a user-defined start point to a destination while avoiding obstacles.
@@ -25,15 +29,13 @@ This project reflects real-world applications such as:
 
 ## 🧠 Technologies Used
 
-- Python – Core programming  
-- Pygame – 2D visualization and simulation  
-- A* Algorithm – Path planning and optimization  
+- Python  
+- Pygame  
+- A* Algorithm  
 
 ---
 
 ## 🏗️ System Architecture
-
-The system follows a modular architecture:
 
 1. Environment Setup  
    - Grid-based map generation (20x20)  
@@ -43,7 +45,7 @@ The system follows a modular architecture:
 
 3. Obstacle Handling  
    - Manual placement  
-   - Automatic obstacle generation (validated)  
+   - Automatic obstacle generation  
 
 4. Path Planning Engine  
    - A* algorithm computes shortest path  
@@ -61,62 +63,61 @@ The system follows a modular architecture:
 - Guaranteed valid path before simulation  
 - Real-time path visualization  
 - Step-by-step robot movement  
-- Interactive controls for simulation  
+- Interactive controls  
 
-
+---
 
 ## 📂 Project Structure
-
-```
 AI-Based-Autonomous-Navigation-System/
 │
 ├── src/
-│   ├── main.py
-│   ├── simulation.py
-│   └── path_planning.py
+│ ├── main.py
+│ ├── simulation.py
+│ └── path_planning.py
 │
 ├── images/
 ├── demo/
 ├── README.md
 └── requirements.txt
-```
 
 
-
+---
 
 ## ⚙️ Installation
 
 
 pip install pygame
 
+
 ---
 
 ## ▶️ How to Run
-python src/main.py
 
+
+python src/main.py
 
 ---
 
 ## 🎮 Controls
 
-| Action               | Key / Input   |
-|---------------------|--------------|
-| Set Start Point     | S + Click     |
-| Set End Point       | E + Click     |
-| Generate Obstacles  | G             |
-| Add Obstacle        | Left Click    |
-| Remove Obstacle     | Right Click   |
-| Start Simulation    | SPACE         |
-| Reset Grid          | R             |
+| Action               | Key / Input |
+|---------------------|------------|
+| Set Start Point     | S + Click  |
+| Set End Point       | E + Click  |
+| Generate Obstacles  | G          |
+| Add Obstacle        | Left Click |
+| Remove Obstacle     | Right Click|
+| Start Simulation    | SPACE      |
+| Reset Grid          | R          |
 
 ---
 
 ## 🔄 Working Flow
 
-1. User selects Start (S) and End (E) points  
-2. Press G to generate obstacles automatically  
-3. System ensures a valid path exists using A*  
-4. Press SPACE to compute path and move robot  
+1. Set Start (S) and End (E)  
+2. Press G to generate obstacles  
+3. System ensures a valid path using A*  
+4. Press SPACE to start robot movement  
 
 ---
 
@@ -145,33 +146,29 @@ Where:
 
 ## 🎥 Demo Video
 
-Click below to watch the project demo:
-
 👉 [Watch Demo](./demo/demo.mp4)
 
 ---
 
 ## 🚀 Future Enhancements
 
-- Dynamic obstacle movement with real-time replanning  
-- Integration with OpenCV for object detection  
-- Implementation of YOLO for obstacle recognition  
-- Upgrade to CARLA Simulator for realistic environments  
-- Reinforcement Learning-based navigation  
+- Dynamic obstacle movement  
+- OpenCV integration  
+- YOLO-based object detection  
+- CARLA simulator integration  
+- Reinforcement learning  
 
 ---
 
 ## 💡 Learning Outcomes
 
-- Strong understanding of A* path planning algorithm  
-- Hands-on experience with simulation-based robotics systems  
-- Knowledge of real-time decision making in AI systems  
-- Practical exposure to autonomous navigation concepts  
+- A* path planning algorithm  
+- Autonomous navigation concepts  
+- Simulation development  
+- Real-time decision making  
 
 ---
 
 ## 👩‍💻 Author
 
-
 Swetha K
-
