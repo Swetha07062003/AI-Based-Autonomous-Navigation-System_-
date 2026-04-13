@@ -67,7 +67,7 @@ This project reflects real-world applications such as:
 
 ## 📂 Project Structure
 
-```text
+```bash
 AI-Based-Autonomous-Navigation-System/
 ├── src/
 │   ├── main.py
