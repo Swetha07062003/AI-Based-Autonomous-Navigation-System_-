@@ -2,139 +2,166 @@
 
 ## 📌 Project Overview
 
-This project simulates an AI-based autonomous navigation system where a robot navigates from a start point to a destination while avoiding obstacles using an intelligent path planning algorithm.
+This project simulates an AI-based autonomous navigation system in a 2D grid environment, where a robot intelligently navigates from a user-defined start point to a destination while avoiding obstacles.
 
-It demonstrates core concepts used in self-driving cars, robotics, warehouse automation, and delivery systems.
+The system leverages the A* (A-Star) path planning algorithm to compute the shortest optimal path and dynamically adapts to generated environments.
+
+This project reflects real-world applications such as:
+- Self-driving vehicles  
+- Warehouse automation  
+- Robotics navigation systems  
+- Delivery route optimization  
 
 ---
 
 ## 🎯 Objective
 
-* Enable autonomous navigation in a virtual environment
-* Avoid obstacles dynamically
-* Compute shortest optimal path using A* algorithm
+- Enable autonomous navigation in a virtual environment  
+- Compute optimal path using heuristic-based search (A*)  
+- Avoid obstacles efficiently  
+- Provide an interactive simulation for real-time visualization  
 
 ---
 
 ## 🧠 Technologies Used
 
-* Python
-* Pygame (2D Simulation)
-* A* Algorithm (Path Planning)
+- Python – Core programming  
+- Pygame – 2D visualization and simulation  
+- A* Algorithm – Path planning and optimization  
 
 ---
 
-## 🏗️ Project Architecture
+## 🏗️ System Architecture
 
-1. Grid-based environment creation
-2. Start and End node selection
-3. Obstacle placement
-4. Path planning using A*
-5. Robot movement along computed path
+The system follows a modular architecture:
+
+1. Environment Setup  
+   - Grid-based map generation (20x20)  
+
+2. User Input Module  
+   - Start and End node selection  
+
+3. Obstacle Handling  
+   - Manual placement  
+   - Automatic obstacle generation (validated)  
+
+4. Path Planning Engine  
+   - A* algorithm computes shortest path  
+
+5. Execution Engine  
+   - Robot follows computed path step-by-step  
+
+---
+
+## ⚡ Key Features
+
+- User-defined Start and End points  
+- Manual obstacle creation and removal  
+- Automatic obstacle generation (press G)  
+- Guaranteed valid path before simulation  
+- Real-time path visualization  
+- Step-by-step robot movement  
+- Interactive controls for simulation  
 
 ---
 
 ## 📂 Project Structure
 
-```
 AI-Based-Autonomous-Navigation-System/
 │
 ├── src/
-│   ├── main.py
-│   ├── simulation.py
-│   └── path_planning.py
+│   ├── main.py            # Main simulation & control logic
+│   ├── simulation.py      # Rendering & visualization
+│   └── path_planning.py   # A* algorithm implementation
 │
-├── images/
-│   ├── grid.png
-│   ├── obstacles.png
-│   ├── path1.png
-│   ├── path2.png
-│   └── start_end.png
-│
-├── demo/
-│   └── demo.mp4
-│
+├── images/                # Output screenshots
+├── demo/                  # Demo video
 ├── README.md
 └── requirements.txt
-```
 
 ---
 
 ## ⚙️ Installation
 
-Install required library:
-
-```bash
 pip install pygame
-```
 
 ---
 
 ## ▶️ How to Run
 
-```bash
 python src/main.py
-```
 
 ---
 
 ## 🎮 Controls
 
-| Action           | Key / Input       |
-| ---------------- | ----------------- |
-| Set Start Point  | Press `S` + Click |
-| Set End Point    | Press `E` + Click |
-| Add Obstacle     | Left Mouse Click  |
-| Remove Obstacle  | Right Mouse Click |
-| Start Simulation | Press `SPACE`     |
-| Reset Grid       | Press `R`         |
+- Set Start Point → S + Click  
+- Set End Point → E + Click  
+- Generate Obstacles → G  
+- Add Obstacle → Left Click  
+- Remove Obstacle → Right Click  
+- Start Simulation → SPACE  
+- Reset Grid → R  
+
+---
+
+## 🔄 Working Flow
+
+1. User selects Start (S) and End (E) points  
+2. Press G to generate obstacles automatically  
+3. System ensures a valid path exists using A*  
+4. Press SPACE to compute path and move robot  
+
+---
+
+## 🧮 Algorithm Used: A* (A-Star)
+
+f(n) = g(n) + h(n)
+
+Where:
+- g(n) = cost from start to current node  
+- h(n) = heuristic (Manhattan distance)  
+- f(n) = total estimated cost  
+
+- Guarantees shortest path  
+- Efficient and widely used in robotics and AI  
 
 ---
 
 ## 📸 Output Screenshots
 
-### 🔹 Grid Environment
-
 ![Grid](images/grid.png)
-
-### 🔹 Obstacle Placement
-
 ![Obstacles](images/obstacles.png)
-
-### 🔹 Path Planning Result
-
 ![Path](images/path1.png)
-
-### 🔹 Start and End Points
-
 ![Start-End](images/start_end.png)
 
 ---
 
 ## 🎥 Demo Video
 
-👉 [Watch Demo](demo/demo.mp4)
+demo/demo.mp4
 
 ---
 
-## 🚀 Future Improvements
+## 🚀 Future Enhancements
 
-* Real-time object detection using OpenCV
-* Integration with YOLO for obstacle recognition
-* Upgrade to CARLA simulator for realistic environment
-* Dynamic obstacle avoidance
-* Reinforcement learning-based navigation
+- Dynamic obstacle movement with real-time replanning  
+- Integration with OpenCV for object detection  
+- Implementation of YOLO for obstacle recognition  
+- Upgrade to CARLA Simulator for realistic environments  
+- Reinforcement Learning-based navigation  
 
 ---
 
 ## 💡 Learning Outcomes
 
-* Understanding of A* path planning algorithm
-* Simulation of autonomous navigation systems
-* Practical exposure to robotics concepts
+- Strong understanding of A* path planning algorithm  
+- Hands-on experience with simulation-based robotics systems  
+- Knowledge of real-time decision making in AI systems  
+- Practical exposure to autonomous navigation concepts  
 
 ---
 
 ## 👩‍💻 Author
 
-**Swetha K**
+Swetha K
