@@ -65,7 +65,7 @@ This project reflects real-world applications such as:
 - Step-by-step robot movement  
 - Interactive controls  
 
-    ## 📂 Project Structure
+## 📂 Project Structure
 
     AI-Based-Autonomous-Navigation-System/
     ├── src/
