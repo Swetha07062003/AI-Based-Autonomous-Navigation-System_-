@@ -91,17 +91,20 @@ pip install pygame
 ## ▶️ How to Run
 python src/main.py
 
+
 ---
 
 ## 🎮 Controls
 
-- Set Start Point → S + Click  
-- Set End Point → E + Click  
-- Generate Obstacles → G  
-- Add Obstacle → Left Click  
-- Remove Obstacle → Right Click  
-- Start Simulation → SPACE  
-- Reset Grid → R  
+| Action               | Key / Input   |
+|---------------------|--------------|
+| Set Start Point     | S + Click     |
+| Set End Point       | E + Click     |
+| Generate Obstacles  | G             |
+| Add Obstacle        | Left Click    |
+| Remove Obstacle     | Right Click   |
+| Start Simulation    | SPACE         |
+| Reset Grid          | R             |
 
 ---
 
