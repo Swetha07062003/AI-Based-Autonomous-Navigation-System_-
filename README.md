@@ -1,132 +1,132 @@
-
-# 🚀 AI-Based Autonomous Navigation System
+# 🚗 AI-Based Autonomous Navigation System
 
 ## 📌 Project Overview
 
-This project simulates an AI-based autonomous navigation system where a robot intelligently moves from a start point to a destination while avoiding obstacles using the A* path planning algorithm.
+This project simulates an AI-based autonomous navigation system where a robot finds the shortest path from a start point to a destination while avoiding obstacles.
 
-The system demonstrates core concepts of robotics and autonomous systems such as path planning, obstacle avoidance, and simulation-based navigation.
+It demonstrates core concepts used in self-driving cars, robotics, and automation systems.
 
 ---
 
 ## 🎯 Objective
-To simulate how autonomous robots and self-driving systems make navigation decisions without human intervention.
+
+* Enable a virtual robot to navigate autonomously
+* Avoid obstacles intelligently
+* Find the shortest optimal path using AI algorithms
 
 ---
 
-## 🌍 Industry Relevance
-Used in:
-- Self-driving cars (Tesla, Waymo)
-- Warehouse robots
-- Delivery robots
-- Drones
-- Industrial automation
+## 🧠 Technologies Used
+
+* Python
+* Pygame (for simulation)
+* A* Algorithm (Path Planning)
 
 ---
 
-## ✨ Features
+## 🏗️ Project Architecture
 
-- Interactive grid-based simulation
-- A* path planning algorithm implementation
-- Dynamic obstacle placement
-- Real-time robot movement visualization
-- Start and end point selection
-- Keyboard-based control system
-- Clean modular Python code structure
----
-
-## 🛠️ Tech Stack
-- Python  
-- Pygame  
-- A* Algorithm  
-
----
-
-## 🧠 Architecture
-
-User Input → Grid → Path Planning → Robot Movement → Visualization
+1. Grid-based environment
+2. Start & End point selection
+3. Obstacle placement
+4. Path planning using A*
+5. Robot movement simulation
 
 ---
 
 ## 📂 Project Structure
-demo/demo.mp4
+
+AI-Based-Autonomous-Navigation-System/
+
+src/
+  main.py
+  simulation.py
+  path_planning.py
+
 images/
-main.py
-simulation.py
-path_planning.py
+  grid.png
+  obstacles.png
+  path1.png
+  path2.png
+  start_end.png
+
+demo/
+  demo.mp4
+
 README.md
 requirements.txt
 
 ---
 
-## ▶️ How to Run
+## ⚙️ Installation
 
-1. Clone the repository:
-git clone https://github.com/Swetha07062003/AI-Autonomous-Navigation-System-
+Install dependencies:
 
-2. Navigate to the project:
-cd AI-Autonomous-Navigation-System
-
-3. Install dependencies:
 pip install pygame
 
-4. Run the project:
+---
+
+## ▶️ How to Run
+
 python src/main.py
+
+---
 
 ## 🎮 Controls
 
-- S → Start  
-- E → End  
-- SPACE → Move  
-- Left Click → Add obstacle  
-- Right Click → Remove obstacle  
-- R → Reset  
-- G → Auto obstacles  
-- P → Save output  
+Set Start → S
+Set End → E
+Add Obstacle → Left Click
+Remove Obstacle → Right Click
+Start Simulation → SPACE
+Reset → R
+
+---
+
+## 📸 Output Screenshots
+
+### Grid Environment
+
+![Grid](images/grid.png)
+
+### Obstacles Placement
+
+![Obstacles](images/obstacles.png)
+
+### Path Planning
+
+![Path](images/path1.png)
+
+### Start and End Points
+
+![Start-End](images/start_end.png)
 
 ---
 
 ## 🎥 Demo Video
 
-▶️ Click below to watch the project demo:
+[Click to watch demo](demo/demo.mp4)
 
-[Watch Demo Video](demo/demo.mp4)
----
-
-## 📸 Screenshots
-
-### 🧱 Grid Setup
-![Grid](images/grid.png)
-
-### 🚧 Obstacles Placement
-![Obstacles](images/obstacles.png)
-
-### 🧠 Path Planning (A*)
-![Path](images/path1.png)
-
-
-<<<<<<< HEAD
-=======
-
->>>>>>> 4571341f5bd424a606d947cb8058791dd7f150e3
 ---
 
 ## 🚀 Future Improvements
 
-- 🔹 Real-time camera integration using OpenCV for live obstacle detection
-- 🔹 Implementation of YOLO-based object detection for dynamic environments
-- 🔹 Integration with ROS (Robot Operating System) for real robotic applications
-- 🔹 Upgrade from 2D grid simulation to 3D simulation using CARLA or Gazebo
-- 🔹 Implementation of Reinforcement Learning for adaptive navigation
-- 🔹 Multi-agent navigation system (multiple robots coordination)
-- 🔹 Path optimization using Dijkstra and Hybrid A* algorithms
-- 🔹 Deployment on Raspberry Pi / Jetson Nano with real hardware
+* Add real-time camera input using OpenCV
+* Integrate object detection (YOLO)
+* Upgrade to CARLA simulator
+* Implement dynamic obstacle avoidance
+* Add reinforcement learning
+
+---
+
+## 💡 Learning Outcomes
+
+* Understanding of path planning algorithms
+* Simulation of autonomous navigation
+* Basics of robotics and AI systems
 
 ---
 
 ## 👩‍💻 Author
-<<<<<<< HEAD
+
 Swetha K
-=======
-Swetha K
->>>>>>> 4571341f5bd424a606d947cb8058791dd7f150e3
