@@ -104,8 +104,6 @@ python src/main.py
 ### 🧠 Path Planning (A*)
 ![Path](images/path1.png)
 
-### 🤖 Robot Navigation Output
-![Output](images/output.png)
 
 ---
 
