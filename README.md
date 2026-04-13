@@ -63,23 +63,26 @@ The system follows a modular architecture:
 - Step-by-step robot movement  
 - Interactive controls for simulation  
 
----
+
 
 ## 📂 Project Structure
+
+```
 AI-Based-Autonomous-Navigation-System/
 │
 ├── src/
-│ ├── main.py # Main simulation & control logic
-│ ├── simulation.py # Rendering & visualization
-│ └── path_planning.py # A* algorithm implementation
+│   ├── main.py            # Main simulation & control logic
+│   ├── simulation.py      # Rendering & visualization
+│   └── path_planning.py   # A* algorithm implementation
 │
-├── images/ # Output screenshots
-├── demo/ # Demo video
+├── images/                # Output screenshots
+├── demo/                  # Demo video
 ├── README.md
 └── requirements.txt
+```
 
 
----
+
 
 ## ⚙️ Installation
 
