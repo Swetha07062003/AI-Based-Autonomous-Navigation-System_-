@@ -1,61 +1,44 @@
 import heapq
 
-def astar(grid, start, end):
+def astar(grid, start, goal):
     rows = len(grid)
-
-    def heuristic(a, b):
-        return abs(a[0] - b[0]) + abs(a[1] - b[1])
+    cols = len(grid[0])
 
     open_set = []
     heapq.heappush(open_set, (0, start))
 
     came_from = {}
-
     g_score = {start: 0}
-    f_score = {start: heuristic(start, end)}
 
-    visited = set()
+    def heuristic(a, b):
+        return abs(a[0] - b[0]) + abs(a[1] - b[1])
 
     while open_set:
         _, current = heapq.heappop(open_set)
 
-        if current == end:
-            # reconstruct path
+        if current == goal:
             path = []
             while current in came_from:
                 path.append(current)
                 current = came_from[current]
-            path.append(start)
             path.reverse()
             return path
 
-        visited.add(current)
+        for dx, dy in [(1,0), (-1,0), (0,1), (0,-1)]:
+            nx = current[0] + dx
+            ny = current[1] + dy
 
-        neighbors = [
-            (current[0]+1, current[1]),
-            (current[0]-1, current[1]),
-            (current[0], current[1]+1),
-            (current[0], current[1]-1)
-        ]
+            if 0 <= nx < rows and 0 <= ny < cols:
+                if grid[nx][ny] == 1:
+                    continue
 
-        for neighbor in neighbors:
-            r, c = neighbor
+                neighbor = (nx, ny)
+                temp_g = g_score[current] + 1
 
-            if r < 0 or r >= rows or c < 0 or c >= rows:
-                continue
+                if neighbor not in g_score or temp_g < g_score[neighbor]:
+                    g_score[neighbor] = temp_g
+                    f = temp_g + heuristic(neighbor, goal)
+                    heapq.heappush(open_set, (f, neighbor))
+                    came_from[neighbor] = current
 
-            if grid[r][c] == 1:
-                continue
-
-            if neighbor in visited:
-                continue
-
-            temp_g = g_score[current] + 1
-
-            if neighbor not in g_score or temp_g < g_score[neighbor]:
-                came_from[neighbor] = current
-                g_score[neighbor] = temp_g
-                f_score[neighbor] = temp_g + heuristic(neighbor, end)
-                heapq.heappush(open_set, (f_score[neighbor], neighbor))
-
-    return []  # ❌ no path found
+    return []

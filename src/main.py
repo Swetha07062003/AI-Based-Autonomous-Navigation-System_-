@@ -19,55 +19,56 @@ mode = None
 moving = False
 
 clock = pygame.time.Clock()
-speed = 5   # 🔥 NEW (controls movement speed)
+
+step_delay = 200
+last_move_time = 0
 
 def get_clicked_pos(pos):
     gap = WIDTH // ROWS
     x, y = pos
-    row = y // gap
-    col = x // gap
-    return row, col
+    return y // gap, x // gap
 
+# 🔥 GENERATE OBSTACLES WITH VALID PATH
+def generate_valid_obstacles():
+    global grid
 
-# ✅ AUTO OBSTACLE GENERATION
-def generate_random_obstacles(grid, count=40):
-    rows = len(grid)
-    for _ in range(count):
-        r = random.randint(0, rows - 1)
-        c = random.randint(0, rows - 1)
-        grid[r][c] = 1
+    if not start or not end:
+        print("❌ Set START and END first!")
+        return
 
+    while True:
+        grid = [[0 for _ in range(ROWS)] for _ in range(ROWS)]
+
+        for i in range(ROWS):
+            for j in range(ROWS):
+                if random.random() < 0.25:
+                    grid[i][j] = 1
+
+        grid[start[0]][start[1]] = 0
+        grid[end[0]][end[1]] = 0
+
+        temp_path = astar(grid, start, end)
+
+        if temp_path:
+            print("✅ Valid obstacles generated")
+            return
 
 running = True
-frame_count = 0  # 🔥 for speed control
 
 while running:
-    clock.tick(60)  # smoother loop
+    clock.tick(60)
+    current_time = pygame.time.get_ticks()
 
-    # 🔥 SPEED CONTROL LOGIC
-    frame_count += 1
+    # 🔥 MOVEMENT
+    if moving and current_time - last_move_time > step_delay:
+        last_move_time = current_time
 
-    # ✅ REAL-TIME REPLANNING + CONTROLLED SPEED
-    if moving and frame_count % speed == 0:
-        if robot_pos == end:
-            moving = False
+        if len(path) > 0:
+            robot_pos = path.pop(0)
+            print("Moving to:", robot_pos)
         else:
-            new_path = astar(grid, robot_pos, end)
-
-            if new_path:
-                path = new_path
-
-                if len(path) > 1:
-                    target = path[1]
-
-                    # 🔥 LOGGING
-                    print("Agent moving to:", target)
-
-                    robot_pos = target
-                else:
-                    robot_pos = end
-            else:
-                moving = False
+            print("Reached Goal")
+            moving = False
 
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
@@ -77,15 +78,28 @@ while running:
 
             if event.key == pygame.K_s:
                 mode = "start"
+                print("Select START")
 
             elif event.key == pygame.K_e:
                 mode = "end"
+                print("Select END")
+
+            elif event.key == pygame.K_g:
+                generate_valid_obstacles()
+                path = []
+                robot_pos = start
+                moving = False
 
             elif event.key == pygame.K_SPACE:
                 if start and end:
                     path = astar(grid, start, end)
-                    robot_pos = start
-                    moving = True
+
+                    if path:
+                        robot_pos = start
+                        moving = True
+                        print("🚀 Movement started")
+                    else:
+                        print("❌ No path!")
 
             elif event.key == pygame.K_r:
                 grid = [[0 for _ in range(ROWS)] for _ in range(ROWS)]
@@ -96,45 +110,28 @@ while running:
                 moving = False
                 mode = None
 
-            # ✅ GENERATE OBSTACLES
-            elif event.key == pygame.K_g:
-                generate_random_obstacles(grid)
-
-            # ✅ SAVE OUTPUT IMAGE
-            elif event.key == pygame.K_p:
-                pygame.image.save(win, "output.png")
-                print("Screenshot saved!")
-
-            # 🔥 SPEED CONTROL KEYS
-            elif event.key == pygame.K_UP:
-                speed = max(1, speed - 1)
-                print("Speed Increased:", speed)
-
-            elif event.key == pygame.K_DOWN:
-                speed += 1
-                print("Speed Decreased:", speed)
-
     left, _, right = pygame.mouse.get_pressed()
 
     if left:
-        pos = pygame.mouse.get_pos()
-        row, col = get_clicked_pos(pos)
+        row, col = get_clicked_pos(pygame.mouse.get_pos())
 
         if mode == "start":
             start = (row, col)
             robot_pos = start
             mode = None
+            print("Start:", start)
 
         elif mode == "end":
             end = (row, col)
             mode = None
+            print("End:", end)
 
         else:
-            grid[row][col] = 1
+            if (row, col) != start and (row, col) != end:
+                grid[row][col] = 1
 
     if right:
-        pos = pygame.mouse.get_pos()
-        row, col = get_clicked_pos(pos)
+        row, col = get_clicked_pos(pygame.mouse.get_pos())
         grid[row][col] = 0
 
     draw(win, grid, path, robot_pos, end)
