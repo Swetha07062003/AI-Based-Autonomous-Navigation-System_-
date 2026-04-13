@@ -66,29 +66,29 @@ The system follows a modular architecture:
 ---
 
 ## 📂 Project Structure
-
 AI-Based-Autonomous-Navigation-System/
 │
 ├── src/
-│   ├── main.py            # Main simulation & control logic
-│   ├── simulation.py      # Rendering & visualization
-│   └── path_planning.py   # A* algorithm implementation
+│ ├── main.py # Main simulation & control logic
+│ ├── simulation.py # Rendering & visualization
+│ └── path_planning.py # A* algorithm implementation
 │
-├── images/                # Output screenshots
-├── demo/                  # Demo video
+├── images/ # Output screenshots
+├── demo/ # Demo video
 ├── README.md
 └── requirements.txt
+
 
 ---
 
 ## ⚙️ Installation
+
 
 pip install pygame
 
 ---
 
 ## ▶️ How to Run
-
 python src/main.py
 
 ---
@@ -130,16 +130,18 @@ Where:
 
 ## 📸 Output Screenshots
 
-![Grid](images/grid.png)
-![Obstacles](images/obstacles.png)
-![Path](images/path1.png)
-![Start-End](images/start_end.png)
+![Grid](images/grid.png)  
+![Obstacles](images/obstacles.png)  
+![Path](images/path1.png)  
+![Start-End](images/start_end.png)  
 
 ---
 
 ## 🎥 Demo Video
 
-demo/demo.mp4
+Click below to watch the project demo:
+
+👉 [Watch Demo](./demo/demo.mp4)
 
 ---
 
