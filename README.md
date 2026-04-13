@@ -65,19 +65,17 @@ This project reflects real-world applications such as:
 - Step-by-step robot movement  
 - Interactive controls  
 
-## 📂 Project Structure
+    ## 📂 Project Structure
 
-```text
-AI-Based-Autonomous-Navigation-System/
-├── src/
-│   ├── main.py
-│   ├── simulation.py
-│   └── path_planning.py
-├── images/
-├── demo/
-├── README.md
-└── requirements.txt
-```
+    AI-Based-Autonomous-Navigation-System/
+    ├── src/
+    │   ├── main.py
+    │   ├── simulation.py
+    │   └── path_planning.py
+    ├── images/
+    ├── demo/
+    ├── README.md
+    └── requirements.txt
 
 ## ⚙️ Installation
 
