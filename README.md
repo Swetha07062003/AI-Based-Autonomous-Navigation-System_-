@@ -71,12 +71,12 @@ The system follows a modular architecture:
 AI-Based-Autonomous-Navigation-System/
 │
 ├── src/
-│   ├── main.py            # Main simulation & control logic
-│   ├── simulation.py      # Rendering & visualization
-│   └── path_planning.py   # A* algorithm implementation
+│   ├── main.py
+│   ├── simulation.py
+│   └── path_planning.py
 │
-├── images/                # Output screenshots
-├── demo/                  # Demo video
+├── images/
+├── demo/
 ├── README.md
 └── requirements.txt
 ```
